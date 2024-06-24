@@ -1,0 +1,95 @@
+%\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}    
+\usepackage{enumitem}
+\usepackage{amsmath}
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}              \usepackage{circuitikz}                              
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usetikzlibrary{shapes.gates.logic.US, circuits.logic.US}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{GATE:PH-24-2023}
+\author{EE23BTECH11048 - P Venkata Chanakya $^{}$% <-this % stops a space
+}
+\maketitle
+\bigskip
+\textbf{Question}
+Which one of the following options is CORRECT for the given logic circuit?
+\begin{center}
+    \begin{circuitikz}
+
+        % AND gate
+        \draw (-2,0) node[and port, anchor=in 1] (and1) {};
+        \draw (and1.in 1) -- ++(-0.7,0) node[above] {$P$}node[fill,circle,inner sep=2pt] {} ;
+        \draw (and1.in 2) -- ++(-0.7,0) node[below] {$Q$}node[fill,circle,inner sep=2pt] {} ;
+        \draw (and1.out) -- ++(2,0);
+
+        % NAND gate
+        \draw (0,2) node[nand port, anchor=in 1] (nand1) {};
+        \draw (nand1.in 1) -- ++(-0.5,0) -- ++ (0,-0.6) ;
+        \draw (nand1.in 2) -- ++(-0.5,0) ;
+        \draw (nand1.out) -- ++(0.4,0) -- ++ (0,-1.41);
+
+        % OR gate
+        \draw (2,0.27) node[or port, anchor=in 1] (or1) {};
+        \draw (or1.in 1) -- ++(-0.1,0);
+        \draw (or1.in 2) -- ++(-0.5,0);
+        \draw (or1.out) -- ++(0.5,0) node[right] {Y}node[fill,circle,inner sep=2pt] {} ;
+        \draw (-2,0) -- ++ (0,1.75) -- ++ (1.43,0);
+    \end{circuitikz}
+\end{center}
+\begin{enumerate}
+    \item  $P = 1$, $Q = 1$; $X = 0$
+    \item  $P = 1$, $Q = 0$; $X = 1$
+    \item  $P = 0$, $Q = 1$; $X = 0$
+    \item  $P = 0$, $Q = 0$; $X = 1$
+\end{enumerate}
+\hfill{PH-2023}\\
+\solution\\
+$X = \overline{P} + P \cdot Q$
+
+\input{tables/table.tex}
+$\implies 4$ is correct option
+\end{document}
+

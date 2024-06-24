@@ -1,0 +1,93 @@
+%\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}    
+\usepackage{enumitem}
+\usepackage{amsmath}
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}              \usepackage{circuitikz}                              
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usetikzlibrary{shapes.gates.logic.US, circuits.logic.US}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{GATE:IN-23-2022}
+\author{EE23BTECH11048 - P Venkata Chanakya $^{}$% <-this % stops a space
+}
+\maketitle
+\bigskip
+
+
+
+\textbf{Question}
+The output F of the digital circuit shown can be written in the form $\rule{1cm}{0.15mm}$\\
+\begin{center}
+\begin{circuitikz}[scale=1]
+
+% First 2-1 MUX
+\draw (0,0) node[draw, minimum width=3cm, minimum height=4cm] (mux1) {\parbox{1.6cm}{$2\times1$ \\ MUX}};
+\draw (-1.5,1.4)node[right] {$I_0$} -- ++(-1.5,0) node[above] {$1$} ;
+\draw (-1.5,-1.4)node[right] {$I_1$} -- ++(-1.5,0) node[above] {$0$};
+\draw (0,-2)node[above] {$S_0$} -- ++(0,-1.5) node[left] {$B$};
+\draw (mux1.east) -- ++(1.5,0) node[right] {};
+
+% Second 2-1 MUX positioned to the right of the first one
+\draw (6,0) node[draw, minimum width=3cm, minimum height=4cm] (mux2) {\parbox{1.6cm}{$2\times1$ \\ MUX}};
+\draw (4.5,1.4)node[right] {$I_0$} -- ++(-1.5,0) node[above] {$1$} ;
+\draw (4.5,-1.4)node[right] {$I_1$} -- ++(-1.5,0) node[left] {};
+\draw (6,-2)node[above] {$S_0$} -- ++(0,-1.5) node[left] {$A$};
+\draw (mux2.east) -- ++(1,0) node[right] {$F$};
+\draw (3,0) -- ++(0,-1.4);
+\end{circuitikz}
+\end{center}
+\begin{enumerate}
+    \item $\overline{A\cdot B}$
+    \item $\overline{A}+\overline{B}$
+    \item $\overline{A+B}$
+    \item $\overline{A} \cdot \overline{B}$
+\end{enumerate} 
+\hfill{IN 2022}\\
+\solution\\
+Truth table for the following digital circuit\\
+\input{tables/table.tex}
+$\implies A \text{ and } B$ are correct choices
+\end{document}
+
