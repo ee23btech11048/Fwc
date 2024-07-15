@@ -1,14 +1,3 @@
-/*==========================================================
-Code by G V V Sharma
-March 7, 2021,
-Released under GNU/GPL
-https://www.gnu.org/licenses/gpl-3.0.en.html
-/*==========================================================
- *
- *    File   : main.c
- *    Purpose: main for Pygmy blink onboard led
- *                                                          
- *=========================================================*/
 
 #include "Fw_global_config.h"   // This defines application specific characteristics
 
